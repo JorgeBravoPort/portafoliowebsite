@@ -1,5 +1,6 @@
 # portafoliowebsite
 Español
+
 Bienvenidos a mi proyecto para la diplomatura de la UTN en desarrollo full stack en ReactJS
 
 La finalidad de este proyecto es aprender a implementar las tecnologias de React para un crear un website y moldearlo
@@ -10,6 +11,7 @@ Es una muestra de mi avance como developer y de mis practicas.
 Estan bienvenidos a sugerir ideas y comentarios para seguir mi aprendizaje
 
 English
+
 Welcome to my project for the UTN diploma in full stack development in ReactJS
 
 The purpose of this project is to learn HTML5, CSS, JS, ReactJS technologies to create a website and shape it

@@ -4,9 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var session = require('express-session');
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/controller/login');
+//var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/controller/login'); //login.js
 
 var app = express();
 
@@ -20,8 +22,42 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(session({
+  secret: 'jorge',
+  resave: false,
+  saveUninitialized: true,
+}));
+
+
+//app.use('/', indexRouter);
+
+app.get('/', function (req, res, next) {
+  var conocido = Boolean(req.session.nombre)
+
+  res.render('index', {
+    title: 'Sesiones con Express.js',
+    conocido: conocido,
+    nombre: req.session.nombre,
+  })
+});
+
+app.post('/ingresar', function (req, res, next) {
+  console.log(req.body.nombre)
+  if (req.body.nombre) {
+    req.session.nombre = req.body.nombre;
+  }
+  res.redirect('/');
+});
+
+app.get('/salir', function (req, res, next) {
+  req.session.destroy();
+  res.redirect('/');
+}
+);
+
+
+
+//app.use('/users', usersRouter);
 app.use('/controller/login', loginRouter);
 
 

@@ -9,6 +9,9 @@
                     <input type="password" class="form-control" placeholder="Password" name="Password">
                 </div>
                 <button type="submit" class="btn btn-primary">Log In</button>
+                {{#if error}}
+                <p>Username or password are not correct</p>
+                {{/if}}
             </form>
         </div>
     </div>

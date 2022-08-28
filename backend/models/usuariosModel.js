@@ -1,4 +1,4 @@
-var pool = require(''./ models / db.js');
+var pool = require('./ models / db.js');
 var md5 = require('md5');
 
 async function getUserByUsernameAndPassword(user, password) {
@@ -10,3 +10,5 @@ async function getUserByUsernameAndPassword(user, password) {
         throw error;
     }
 }
+
+module.exports = { getUserByUsernameAndPassword }

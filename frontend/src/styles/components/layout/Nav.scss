@@ -1,10 +1,11 @@
 .nav-bar {
-    width: 60px;
+    width: 75px;
     height: 100%;
     position: absolute;
     top: 0;
     z-index: 3;
     min-height: 500px;
+    margin-left: 0px;
   
 
 .logo {
@@ -26,7 +27,6 @@
     top: 50%;
     margin-top: -120px;
     width: 100%;
-    color: #fffff0;
 
     a{
         font-size: 22px;
@@ -41,7 +41,7 @@
         }
 
         &:hover{
-            color:  rgb(187, 187, 187);
+            color:  rgb(255, 98, 0);
 
             svg{
                 opacity: 0;
@@ -53,10 +53,11 @@
         }
         &:after{
             content: '';
-            font-size: 9px;
-            letter-spacing: 2px;
+            font-size: 15px;
+            letter-spacing: 1px;
             position: absolute;
             bottom: 0;
+            font-weight: bold;
             display: block;
             width: 100%;
             text-align: center;
@@ -89,8 +90,31 @@
     }
     a.active {
         svg{
-            color: rgb(65, 128, 255);
+            color: rgb(255, 145, 0);
         }
     }
    }
+   ul {
+    position:absolute;
+    bottom: 15px;
+    width: 100%;
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+
+    li {
+        a {
+          padding: 7px 0;
+          display: block;
+          font-size: 20px;
+          line-height: 16px;
+          
+          &:hover svg {
+            color: chocolate;
+        }
+    }
+   }
+}
 }

@@ -1,0 +1,61 @@
+.sobremi {
+
+    width: 90%;
+    will-change: contents;
+    height: 90%;
+    position: absolute;
+    top: 20%;
+    margin-left: 100px;
+    z-index: 1;
+    
+h1 {
+    color: black;
+    font-size: 70px;
+    font-weight: bolder;
+    font-family: "Montserrat Alternates";
+    letter-spacing: 1px;
+}
+ 
+   .sobremi1 { 
+    color: black;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: sans-serif;
+        
+    }
+
+    .sobremi2 { 
+        color: black;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+    .sobremi3 { 
+        color: black;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: sans-serif;
+        
+    }
+
+    .sobremi4 { 
+        color: black;
+        font-size: 24px;
+        font-weight: bold;
+        font-family: sans-serif;
+        
+    }
+
+
+    li{ 
+          padding: 20px;
+          display: inline-block;
+          font-size: 80px;
+          line-height: 16px;
+          
+          svg{
+            color: chocolate;
+          }
+    }
+}

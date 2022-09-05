@@ -1,6 +1,6 @@
 {
   "name": "backend",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www"
@@ -8,6 +8,7 @@
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
+    "dotenv": "^16.0.1",
     "express": "~4.16.1",
     "express-session": "^1.17.3",
     "hbs": "~4.0.4",

@@ -3,7 +3,7 @@ import "/Users/jorgeandresbravo/portafoliowebsite/frontend/src/styles/components
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAddressBook, faBookOpenReader, faHouse, faNewspaper, } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Nav = () => {
     return (
@@ -44,6 +44,14 @@ const Nav = () => {
                         rel="noreferrer"
                         href="https://www.linkedin.com/in/jorgeabravop">
                         <FontAwesomeIcon icon={faLinkedin} color="#fffff0" />
+                    </a>
+                </li>
+                <li>
+                    <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://www.github.com/JorgeBravoPort">
+                        <FontAwesomeIcon icon={faGithub} color="#fffff0" />
                     </a>
                 </li>
             </ul>

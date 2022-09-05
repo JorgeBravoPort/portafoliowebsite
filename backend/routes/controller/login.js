@@ -1,11 +1,10 @@
-const { Router } = require('express');
-var usuariosModel = require('./models/usuariosModel.js')
+const router = require('express');
 
-router.post('/', async (req, res,) => {
+
+router.post('/', async (req, res, next) => {
     try {
         var usuario = req.body.usuario;
         var password = req.body.password;
-
         var data = await
             usuariosModel.getUserbyUsernameAndPassword(usuario, password);
         if (data != undefined) {
@@ -30,3 +29,4 @@ router.get('/logout', function (req, res, next) {
     })
 });
 
+module.exports = router;

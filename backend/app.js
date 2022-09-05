@@ -4,11 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+require('dotenv').config();
+var pool = require('./models/db');
+
 var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 //var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/controller/login'); //login.js
+var router = require('./routes/controller/login'); //login.js
 
 var app = express();
 
@@ -34,7 +37,7 @@ app.use(session({
 app.get('/', function (req, res, next) {
   var conocido = Boolean(req.session.nombre)
 
-  res.render('index', {
+  res.render('controller/login', {
     title: 'Sesiones con Express.js',
     conocido: conocido,
     nombre: req.session.nombre,

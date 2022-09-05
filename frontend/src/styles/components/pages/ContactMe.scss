@@ -1,0 +1,96 @@
+.containercontact-page {
+    width: 90%;
+    will-change: contents;
+    height: 90%;
+    position: absolute;
+    top: 20%;
+    margin-left: 100px;
+    z-index: 1;
+    
+
+     h1 { 
+    color: black;
+    font-size: 60px;
+    font-family: "Montserrat Alternates";
+    letter-spacing: 1px;
+    font-weight: bolder;
+    }
+
+    .contact-p { 
+        color: black;
+        font-size: 24px;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-family: sans-serif;
+    }
+
+    .contact-form {
+    width: 100%;
+    margin-top: 20px;
+    
+    ul{
+        padding: 0;
+    
+        li{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            margin-bottom: 10px;
+            overflow: hidden;
+            display: block;
+            position: relative;
+            opacity: 1;
+            clear: both;
+        }
+
+        li.half{
+            width: 49%;
+            margin-left: 2%;
+            float: left;
+            clear: none;
+
+
+            &:first-child{
+                margin-left: 0;
+            }
+        }
+    } 
+    input[type="text"],
+    input[type="email"] {
+        width: 100%;
+        border: 0;
+        background-color: rgb(255, 172, 141);
+        height: 50px;
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+        padding: 0 20px;
+        box-sizing: border-box;
+        font-family: "MontserratAlternates";
+    }
+
+    textarea {
+        width: 100%;
+        border: 0;
+        background-color: rgb(255, 172, 141);
+        height: 50px;
+        font-size: 18px;
+        color: rgb(0, 0, 0);
+        padding: 20px;
+        min-height: 150px;
+        box-sizing: border-box;
+        font-family: "MontserratAlternates";
+    }
+
+    .flat-button{
+        color: coral;
+        background:0 0;
+        font: 11px;
+        letter-spacing: 4px;
+        text-decoration: none;
+        padding: 8px 10px;
+        border: 1px solid coral;
+        float: right;
+        border-radius: 4px;
+    }
+}
+}

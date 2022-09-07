@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var cors = require('cors');
 require('dotenv').config();
 var pool = require('./db');
 
@@ -14,6 +14,7 @@ var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/controller/login'); //login.js
 var blogRouter = require('./routes/controller/blog');
 const { query } = require('./models/db');
+
 
 var app = express();
 
@@ -51,6 +52,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/controller/login', loginRouter);
 app.use('/controller/blog', secured, blogRouter);
+
 
 
 // catch 404 and forward to error handler

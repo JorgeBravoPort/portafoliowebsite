@@ -40,4 +40,44 @@ router.post('/agregar', async (req, res, next) => {
         })
     }
 }),
-    module.exports = router;
+
+    router.get('/eliminar/:id', async (req, res, next) => {
+        var id = req.params.id;
+        await blogsModel.deleteBlogById(id);
+        res.redirect('/controller/blog');
+    })
+
+
+router.get('/modificar/:id', async (req, res, next) => {
+    var id = req.params.id;
+    //console.log(req.params.id);
+    var blog = await blogsModel.getBlogById(id);
+
+    //console.log(req.params.id);
+    res.render('controller/modificar', {
+        layout: 'controller/layout',
+        blog
+    })
+})
+
+router.post('/modificar', async (req, res, next) => {
+    try {
+        var obj = {
+            title: req.body.title,
+            body: req.body.body,
+            writer: req.body.writer
+        }
+        //console.log(obj);
+        await blogsModel.modificarBlogById(obj, req.body.id);
+        res.redirect('/controller/blog');
+    } catch (error) {
+        console.log(error);
+        res.render('controller/modificar', {
+            layout: 'controller/layout',
+            error: true,
+            message: 'no se modifico el Blog'
+        }
+        )
+    }
+})
+module.exports = router;

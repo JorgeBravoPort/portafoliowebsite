@@ -1,0 +1,26 @@
+<div class="container" style="margin: 100px auto">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Modify blog</h4>
+            <form action="/controller/blog/modificar" method="post">
+                <input type="hidden" value="{{blog.id}}" name="id">
+                <div class="mb-3 row">
+                    <label for="">Title</label>
+                    <input type="text" class="form-control" name="title" value="{{blog.title}}">
+                </div>
+                <div class="mb-3 row">
+                    <label for="">Body</label>
+                    <textarea type="text" class="form-control" name="body">{{blog.body}}</textarea>
+                </div>
+                <div class="mb-3 row">
+                    <label for="">Writer</label>
+                    <input type="text" class="form-control" name="writer" value="{{blog.writer}}">
+                </div>
+                <button type="submit" class="btn btn-primary">Modify</button>
+            </form>
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

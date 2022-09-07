@@ -13,7 +13,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var loginRouter = require('./routes/controller/login'); //login.js
 var blogRouter = require('./routes/controller/blog');
-const { query } = require('./models/db');
+var apiRouter = require('./routes/api');
+
 
 
 var app = express();
@@ -52,6 +53,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/controller/login', loginRouter);
 app.use('/controller/blog', secured, blogRouter);
+app.use('/api', cors(), apiRouter);
 
 
 

@@ -9,7 +9,7 @@ const BlogItem = (props) => {
             <h1>{title}</h1>
             <p>{body}</p>
             <h2>{writer}</h2>
-            {/* <div dangerouslySetInnerHTML={{ _html: body }} /> */}
+
             <hr />
         </div>
     );

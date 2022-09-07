@@ -1,0 +1,22 @@
+<div class="container" style="margin: 100px auto;">
+    <div class="row">
+        <div class="col-offset-6">
+            <h4>Agregar un Blog</h4>
+            <form action="/controller/blog/agregar" method="POST">
+                <div class="mb-3 row">
+                    <input type="text" class="form-control" placeholder="Title" name="title">
+                </div>
+                <div class="mb-3 row">
+                    <textarea type="text" class="form-control" placeholder="Body" name="body"></textarea>
+                </div>
+                <div class="mb-3 row">
+                    <textarea type="text" class="form-control" placeholder="Writer" name="writer"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+            {{#if error}}
+            <p>{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

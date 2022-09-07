@@ -5,13 +5,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 require('dotenv').config();
-var pool = require('./models/db');
+var pool = require('./db');
 
 var session = require('express-session');
 
 var indexRouter = require('./routes/index');
-//var usersRouter = require('./routes/users');
-var router = require('./routes/controller/login'); //login.js
+var usersRouter = require('./routes/users');
+var loginRouter = require('./routes/controller/login'); //login.js
+var blogRouter = require('./routes/controller/blog');
+const { query } = require('./models/db');
 
 var app = express();
 
@@ -26,43 +28,29 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-  secret: 'jorge',
+  secret: 'aiuda',
+  cookie: { maxAge: null },
   resave: false,
-  saveUninitialized: true,
-}));
+  saveUninitialized: true
+}))
 
-
-//app.use('/', indexRouter);
-
-app.get('/', function (req, res, next) {
-  var conocido = Boolean(req.session.nombre)
-
-  res.render('controller/login', {
-    title: 'Sesiones con Express.js',
-    conocido: conocido,
-    nombre: req.session.nombre,
-  })
-});
-
-app.post('/ingresar', function (req, res, next) {
-  console.log(req.body.nombre)
-  if (req.body.nombre) {
-    req.session.nombre = req.body.nombre;
+secured = async (req, res, next) => {
+  try {
+    console.log(req.session.id_usuario);
+    if (req.session.id_usuario) {
+      next();
+    } else {
+      res.redirect('controller/login')
+    }
+  } catch (error) {
+    console.log(error);
   }
-  res.redirect('/');
-});
+};
 
-app.get('/salir', function (req, res, next) {
-  req.session.destroy();
-  res.redirect('/');
-}
-);
-
-
-
-
-//app.use('/users', usersRouter);
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
 app.use('/controller/login', loginRouter);
+app.use('/controller/blog', secured, blogRouter);
 
 
 // catch 404 and forward to error handler
